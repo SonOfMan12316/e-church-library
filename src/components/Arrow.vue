@@ -1,0 +1,26 @@
+<template>
+    <div>
+        <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="18" height="12" fill="#E8E8E8"/>
+            <g clip-path="url(#clip0)">
+            <rect width="1280" height="3527" transform="translate(-1134 -1532)" fill="white"/>
+            <path d="M18 6.06061L12.75 0.478271L11.6895 1.6059L15.129 5.26313H0V6.85808H15.129L11.6895 10.5153L12.75 11.6429L18 6.06061Z" fill="black" fill-opacity="0.56"/>
+            </g>
+            <defs>
+            <clipPath id="clip0">
+            <rect width="1280" height="3527" fill="white" transform="translate(-1134 -1532)"/>
+            </clipPath>
+            </defs>
+        </svg>
+    </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style>
+
+</style>
