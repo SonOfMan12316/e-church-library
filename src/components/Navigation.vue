@@ -26,7 +26,7 @@
                     <img @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': MobileNav}" class=" img w-8"  src="https://img.icons8.com/material/50/000000/menu--v1.png"/>
                 </div>
                 <transition name="mobile-nav">
-                    <ul v-show="mobileNav" class="dropdown-nav flex flex-col gap-y-4 fixed bg-gray-800">  
+                    <ul v-show="mobileNav" class="dropdown-nav flex flex-col gap-y-4 fixed bg-red-600">  
                         <div class="ml-2 md:mt-1 lg:mt-3">
                             <CancelSvg  @click="toggleIsSelected" :class="{ selected: IsSelected }"/>    
                         </div>    
