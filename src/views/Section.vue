@@ -3,7 +3,7 @@
         <div class="section">
             <Navigation/>
             <div class="section-content p-6 sm:px-6 lg:px-16 xl:px-20">
-                <div class="section-info flex flex-col sm:flex-row sm:justify-between md:justify-around xl:justify-between xl:mx-20 justify-center items-center gap-y-6 my-12 lg:my-20">
+                <div class="section-info flex flex-col sm:flex-row sm:justify-between md:justify-around xl:justify-between xl:mx-20 justify-center items-center gap-y-6 my-14 sm:my-12 lg:my-20">
                     <div class="section-image hidden sm:block">
                         <div class="image">
                             <img src="../assets/images/Group88.png" class="welcome">

@@ -183,6 +183,12 @@ input[type=text] {
     }    
 }
 
+@media (min-width: 768px) {
+    .icon {
+        top: 30%;
+    }   
+}
+
 @media (min-width: 1024px) {
     .icon {
         top: 30%;
