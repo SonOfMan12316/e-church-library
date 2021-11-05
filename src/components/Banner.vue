@@ -14,6 +14,7 @@
                         <router-link to="/denomination" class="px-8 py-3 sm:px-9 lg:px-12 lg:py-4 border-0 rounded-lg bg-white text-red-600 font-serif font-semibold lg:text-1xl">USER</router-link>
                     </div>
                 </div>
+                <fa icon="coffee"/>
                 <p class="lorem font-serif mt-10 items-center mx-auto text-white text-1xl font-medium">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean ligula eget dolor. Aenean massa. Cum sociis natoque penatibu</p>
             </div>
         </div>

@@ -26,23 +26,11 @@
                 <ul class="flex flex-col gap-x-4 mt-4 mb-2">
                     <li class="flex flex-row">
                         <ArrowRight class="pt-1.5 pr-2"/>
-                        <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Contact Us</p>
-                    </li>
-                    <li class="flex flex-row">
-                        <ArrowRight class="pt-1.5 pr-2"/>
                         <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Donations</p>
                     </li>
                     <li class="flex flex-row">
                         <ArrowRight class="pt-1.5 pr-2"/>
                         <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Preaching Aid</p>
-                    </li>
-                    <li class="flex flex-row">
-                        <ArrowRight class="pt-1.5 pr-2"/>
-                        <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Contact Us</p>
-                    </li>
-                    <li class="flex flex-row">
-                        <ArrowRight class="pt-1.5 pr-2"/>
-                        <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Contact Us</p>
                     </li>
                 </ul>                              
             </div>
@@ -66,11 +54,7 @@
                     </li>
                     <li class="flex flex-row">
                         <ArrowRight class="pt-1.5 pr-2"/>
-                        <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Prayer Request</p>
-                    </li>
-                    <li class="flex flex-row">
-                        <ArrowRight class="pt-1.5 pr-2"/>
-                        <p class="font-medium text-tiny lg:text-base font-serif text-white">Events</p>
+                        <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">Subscription</p>
                     </li>
                 </ul>                                    
             </div> 
@@ -97,7 +81,9 @@
                     </li>
                 </ul>                                       
             </div>            
-        </div>       
+        </div>      
+        <div>
+            </div> 
     </footer>
 </template>
 

@@ -6,7 +6,12 @@
                 <div class="line "></div>
             </div>
             <div class="featuredimages flex flex-col lg:flex-row mt-8 lg:mt-12 gap-y-4 lg:gap-x-20">
-                <FeaturedImages v-for="FeaturedImage in FeaturedImages" :key="FeaturedImage.id" :icon="FeaturedImage.image" :paragraph="FeaturedImage.paragraph"/>
+                    <FeaturedImages
+                    v-for="FeaturedImage in FeaturedImages" 
+                    :key="FeaturedImage.id" 
+                    :icon="FeaturedImage.image" 
+                    :paragraph="FeaturedImage.paragraph" 
+                    />
             </div>
             <div class="mt-8 flex flex-col lg:flex-row lg:gap-x-32 xl:gap-x-52">
                 <div class="jo flex flex-col lg:flex-row lg:gap-x-2">
@@ -29,14 +34,15 @@
 
 <script>
 import FeaturedImages from '../components/FeaturedImages.vue'
+import Carousel from '../components/Carousel'
 export default {
     data () {
         return {
             FeaturedImages: [
                 {
                     id: 0,
-                    image: require('../assets/images/FeaturedImage1.jpg'),
-                    paragraph: 'Dig deep into the scriptures daily.'
+                    image: require('../assets/images/persistence.png'),
+                    paragraph: 'The Importance of Importunity'
                 },
                 {
                     id: 1,
@@ -47,13 +53,55 @@ export default {
                     id: 2,
                     image: require('../assets/images/FeaturedImage3.jpg'),
                     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
-                },
-            ]
+                }
+                // ,
+                // {
+                //     id: 3,
+                //     image: require('../assets/images/FeaturedImage3.jpg'),
+                //     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
+                // },
+                // {
+                //     id: 4,
+                //     image: require('../assets/images/FeaturedImage3.jpg'),
+                //     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
+                // },
+                // {
+                //     id: 5,
+                //     image: require('../assets/images/FeaturedImage3.jpg'),
+                //     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
+                // },
+            ],
+            // visibleSlide: 0,
+            // direction: ''
         }
     },
     components: {
-        FeaturedImages
-    }
+        FeaturedImages,
+        Carousel
+    },
+    // computed: {
+    //     slideLens() {
+    //         return this.slidelength
+    //     }
+    // },
+    // methods: {
+    //     prev() {
+    //         if( this.visibleSlide >= this.slideLens <= 0 ) {
+    //             this.visibleSlide = this.slideLens - 1
+    //         }else {
+    //            this.visibleSlide--; 
+    //         }
+    //         this.direction = "left"
+    //     },
+    //     next() {
+    //         if( this.visibleSlide >= this.slideLens - 1 ) {
+    //             this.visibleSlide = 0
+    //         }else {
+    //            this.visibleSlide++; 
+    //         }
+    //         this.direction = "right"
+    //     }
+    // }
 }
 </script>
 

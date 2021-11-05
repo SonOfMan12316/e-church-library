@@ -10,16 +10,17 @@
                     <h1 class="font-serif font-normal text-tiny sm:text-base lg:text-xl">View All</h1>
                     <Arrow/>
                 </div>
-                <!--  -->
+            </div>
+            <div>
+                <Search
+                v-on:newsChanged="getNews"
+                />
             </div>
             <EventsContent
-            v-for="EventsContent in EventsContents" 
-            :key="EventsContent.id" 
-            :image="EventsContent.images" 
-            :header="EventsContent.header" 
-            :location="EventsContent.location" 
-            :date="EventsContent.date" 
-            :paragraph="EventsContent.paragraph"/>
+            v-for="newsArticle in articles"
+            :key="newsArticle.index"
+            :data="newsArticle" 
+            />
         </div>
     </div>
 </template>
@@ -27,40 +28,45 @@
 <script>
 import Arrow from '../components/Arrow.vue'
 import EventsContent from '../components/EventsContent.vue'
+import SecSearchButton from '../components/SecSearchButton.vue'
+import Search from '../components/Search.vue'
+
 export default {
     components: {
         Arrow,
-        EventsContent
+        EventsContent,
+        SecSearchButton,
+        Search
     },
     data() {
         return {
-            EventsContents: [
-                {
-                    id: 0,
-                    images: require('../assets/images/EventImage.jpg'),
-                    header: 'Bible Study',
-                    date: 'February 12, 2021',
-                    location: 'Lagos Nigeria',
-                    paragraph: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'
-                },
-                {
-                    id: 1,
-                    images: require('../assets/images/EventImage2.jpg'),
-                    header: 'Preach the Word',
-                    date: 'March 23, 2021',
-                    location: 'Port-Harcourt Nigeria',
-                    paragraph: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'
-                },
-                {
-                    id: 2,
-                    images: require('../assets/images/EventImage3.jpg'),
-                    header: 'Pray for Salvation',
-                    date: 'June 20, 2021',
-                    location: 'Ogun Nigeria',
-                    paragraph: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'
-                }
-            ]
+            articles: [],
+            // searchQ: ''
         }
+    },
+    methods: {
+        getNews: function(query) {
+            var that = this;
+            var url = 'https://newsapi.org/v2/everything?' +
+            // 'q=christians&' +
+            'q=' + query + '&' +
+            'apiKey=03e626f76f9b41428758fc7202e3a169';
+            var req = new Request(url);
+            fetch(req)
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                console.log(data);
+                that.articles = data.articles;
+            });
+            
+
+            this.searchQ = '';
+        }
+    },
+    mounted() {
+        this.getNews(this.searchQ);       
     }
 }
 </script>

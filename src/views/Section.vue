@@ -3,7 +3,7 @@
         <div class="section">
             <Navigation/>
             <div class="section-content p-6 sm:px-6 lg:px-16 xl:px-20">
-                <div class="section-info flex flex-col sm:flex-row sm:justify-between md:justify-around xl:justify-between xl:mx-20 justify-center items-center gap-y-6 my-20 sm:my-12 lg:my-20">
+                <div class="section-info flex flex-col sm:flex-row sm:justify-between md:justify-around xl:justify-between xl:mx-20 justify-center items-center gap-y-6 my-14 sm:my-12 md:my-16 lg:my-20">
                     <div class="section-image hidden sm:block">
                         <div class="image">
                             <img src="../assets/images/Group88.png" class="welcome">
@@ -18,11 +18,11 @@
                     </div>
                     <div class="section-border py-2 lg:py-3">
                         <p class="font-serif text-red-600 text-xl font-semibold text-center p-2 lg:py-4">Prayer Request</p>
-                        <form @submit="handleSubmit" class="mx-5">
+                        <form class="mx-5">
                                 <input type="name" v-model="name" name="name" placeholder="Name" class="outline-none text-tiny rounded-lg bg-transparent border-red-600 border-solid font-serif">
                                 <input type="email" v-model="email" name="email" placeholder="Email"  class="outline-none text-tiny rounded-lg bg-transparent border-red-600 border-solid font-serif">
                                 <textarea type="message" v-model="message" placeholder="Message" class="outline-none text-tiny bg-transparent rounded-lg border-red-600 border-solid font-serif"></textarea>
-                                <button class="bg-red-600 text-white font-serif font-medium text-lg">Submit</button>
+                                <button @click="submit.prevent" class="bg-red-600 text-white font-serif font-medium text-lg">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
         </div>        
         <Featured/>
         <Events/>
-        <GetFamiliar/>
+        <!-- <GetFamiliar/> -->
         <News/>
         <Footer/>
     </div>
@@ -55,29 +55,40 @@ export default {
     },
     data() {
         return {
-            name: '',
-            email: '',
-            message: ''
+            user: {
+                name: '',
+                email: '',
+                message: ''
+            }
         }
     },
     methods: {
-      handleSubmit() {
-        const data = {
-            name: this.name,
-            email: this.email,
-            message: this.message
-        }
-      }
+    // handleSubmit() {
+    //     const data = {
+    //         name: this.name,
+    //         email: this.email,
+    //         message: this.message
+    //     }
+    // },
+    submit() {
+        this.$http.post('https://echurchlibrary-http-default-rtdb.firebaseio.com/data.json', this.user)
+        .then(response => {
+            console.log(response);
+        }, error => {
+            console.log(error);
+        });
+    }
   }
 }
 </script>
 
 <style scoped>
+
+
 .section {
     background-image: url('../assets/images/sky-pattern-paradise-hd-free-church-baiyun-pull-material-9d3b8396d6ab6364c246950e89f5bd071.jpg');
     background-position: center;
     background-size: cover;
-    height: 100vh;
 }
 
 .section-border {
@@ -139,6 +150,10 @@ button {
         width: 40%;
     } 
 
+    .section {
+        height: 100vh;
+    }
+
     button {
         height: 2.3rem;
     }
@@ -148,6 +163,10 @@ button {
     .section-border {
         width: 35%;
     } 
+
+    .section {
+        height: auto;
+    }
 }
 
 @media (min-width: 1200px) {

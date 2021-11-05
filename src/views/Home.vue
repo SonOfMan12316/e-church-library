@@ -15,3 +15,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+body {
+  overflow-y: hidden; 
+  overflow-x: hidden;
+}
+</style>

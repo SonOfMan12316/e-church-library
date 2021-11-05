@@ -2,8 +2,10 @@
     <div class="familiarimages flex flex-col md:flex-row justify-center items-center">
         <div class="familiarimages-content flex flex-col justify-center items-center py-8 px-1 lg:px-3">
             <img class="mb-4 " :src="image"/>
-            <h3 class="mb-4 text-black font-medium text-xl lg:text-2xl font-serif">{{ header }}</h3>
-            <p class="text-black font-normal text-xs font-serif text-center">{{ content }}</p>
+            
+                <h3 class="mb-4 text-black font-medium text-xl lg:text-2xl font-serif">{{ header }}</h3>
+                <p class="text-black font-normal text-xs font-serif text-center">{{ content }}</p>
+            
         </div>
     </div>
 </template>

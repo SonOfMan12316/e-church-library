@@ -10,16 +10,16 @@
                 <div class="nav-links hidden">
                     <ul v-show="!mobile" class="navigation flex items-center flex-1 justify-end">
                         <li class=""><router-link to="/" class="link font-serif not-italic font-normal text-base lg:text-lg text-red-600">Home</router-link></li>
-                        <li class=""><router-link to="//audioVideo" class="link font-serif not-italic font-normal text-base lg:text-lg text-gray-500">Audio &amp; Video</router-link></li>
+                        <li class=""><router-link to="/audioVideo" class="link font-serif not-italic font-normal text-base lg:text-lg text-gray-500">Audio &amp; Video</router-link></li>
                         <li class=""><router-link to="books" class="link font-serif not-italic font-normal text-base lg:text-lg text-gray-500">Books</router-link></li>
-                        <li class=""><router-link to="/subscription'" class="link font-serif not-italic font-normal text-base lg:text-lg text-gray-500">Subscription</router-link></li>               
+                        <li class=""><router-link to="/subscription" class="link font-serif not-italic font-normal text-base lg:text-lg text-gray-500">Subscription</router-link></li>               
                     </ul>     
                 </div> 
                 <div class="form hidden xl:block" >
-                    <form class="relative">
-                        <input  type="text" v-model="text"/>
-                        <img class="absolute input-search" src="../assets/images/InputSearch.png"/>
-                    </form>
+                    <SearchButton class="searchbutton" @click="toggleInput"/>
+                    <transition name="fade" appear>
+                        <Search v-show="input" class="absolute"/>
+                    </transition>
                 </div>
             </div> 
                 <div class="icon flex absolute items-center"> 
@@ -28,11 +28,11 @@
                 <transition name="mobile-nav">
                     <ul v-show="mobileNav" class="dropdown-nav flex flex-col gap-y-4 fixed bg-red-600">  
                         <div class="ml-2 md:mt-1 lg:mt-3">
-                            <CancelSvg  @click="toggleIsSelected" :class="{ selected: IsSelected }"/>    
+                            <CancelSvg  @click="toggleIsSelected" :class="{ 'selected' : IsSelected }"/>    
                         </div>    
                         <li class=""><router-link to="/" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Home</router-link></li>
-                        <li class=""><router-link to="//audioVideo" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Audio &amp; Video</router-link></li>
-                        <li class=""><router-link to="books" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Books</router-link></li>
+                        <li class=""><router-link to="/audioVideo" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Audio &amp; Video</router-link></li>
+                        <li class=""><router-link to="/books" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Books</router-link></li>
                         <li class=""><router-link to="/subscription'" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Subscription</router-link></li>
                     </ul>
                 </transition>
@@ -43,10 +43,16 @@
 <script>
 import Logo from '../components/Logo.vue'
 import CancelSvg from '../components/CancelSvg.vue'
+import SearchButton from '../components/SearchButton.vue'
+import Search from '../components/Search.vue'
+
+
 export default {
     components: {
         Logo,
-        CancelSvg
+        CancelSvg,
+        SearchButton,
+        Search
     },
     name: 'Navigation',
     data() {
@@ -55,7 +61,8 @@ export default {
             mobile: false,
             mobileNav: null,
             windowWidth: null,
-            isSelected: false
+            isSelected: false,
+            input: false
         }
     },
     created() {
@@ -74,6 +81,10 @@ export default {
 
         toggleIsSelected() {
             this.mobileNav = !this.mobileNav;
+        },
+
+        toggleInput() {
+            this.input = !this.input;
         },
 
         updateScroll() {
@@ -101,8 +112,8 @@ export default {
 
 <style scoped>
 header {
-    background: #F8F8F8;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
+    background: #FFFFFF;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
     max-width: 100vw;
     height: 12vh;
 }
@@ -134,19 +145,32 @@ nav .nav-content .nav-links ul li {
     border-bottom:  2px solid #CA0609;
 }
 
+a.router-link-exact-active {
+    color: #CA0609;
+    border-bottom:  2px solid #CA0609;   
+}
+
 
 input[type=text] {
-    border: 1px solid #CA0609;
+    border: 1px solid #ddd;
     box-sizing: border-box;
-    border-radius: 20px;
+    border-radius: 5px;
     background: transparent;
     height: 2rem;
     outline: none;
     color: black;
-    padding: 0 0.5rem 0 1rem;
+    padding-top: 1.2rem;
+    padding-left: 1.2rem;
+    padding-bottom: 1.2rem;
+    padding-right: 0.5rem;
+    width: 95%;
+    font-weight: 400;
+}
+
+::placeholder {
+    color: rgb(17, 17, 17);    
 }
 .dropdown-nav {
-    height: 100vh;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.08);
     position: absolute;
     top: 0;
@@ -159,6 +183,29 @@ input[type=text] {
 .icon {
     right: 1.5rem;
     top: 25%;
+}
+
+.searchbutton {
+    cursor: pointer;
+}
+
+form {
+    bottom: -4.5rem;
+    left: 0;
+    z-index: 999;
+    right: 0;
+    /* top: 1.5rem; */
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-top: 0;
+    border-radius: 5px;
+}
+
+.secsearchbtn {
+    border: 1px solid #ddd; 
+    border-radius: 5px;
+    padding: 0.5rem;
 }
 
 .mobile-nav-enter-active,
@@ -176,14 +223,61 @@ input[type=text] {
     transform: translateX(0);
 }
 
+.fade-enter {
+    opacity: 1;
+}
+
+.fade-enter-active {
+    transition: opacity 0.1s;
+    opacity: 0;
+}
+
+.fade-leave {
+    opacity: 0;
+}
+
+.fade-leave-active {
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+@media (max-width: 280px) {
+    .dropdown-nav {
+        height: 87vh;        
+    }
+}
+
+
+@media (min-width: 320px) {
+    .dropdown-nav {
+        height: 97.9vh;        
+    }
+}
+
+@media (min-width: 540px) {
+    .dropdown-nav {
+        height: 80vh;        
+    }
+}
+
 @media (min-width: 640px) {
     .dropdown-nav { 
         width: 40%; 
-        padding: 1rem 0;       
+        padding: 1rem 0; 
+        height: 95vh;      
     }    
 }
 
 @media (min-width: 768px) {
+    .dropdown-nav { 
+        width: 40%; 
+        padding: 1rem 0; 
+        height: 100vh;      
+    }  
+
+    .section {
+        height: 100vh;
+    }
     .icon {
         top: 30%;
     }   
@@ -197,6 +291,10 @@ input[type=text] {
     .icon img {
         width: 75%;
     }
+
+    .dropdown-nav {  
+        height: 86.7vh;      
+    }  
 }
 
 @media (min-width: 1200px) {
