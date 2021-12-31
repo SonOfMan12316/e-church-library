@@ -41,7 +41,7 @@ export default {
             Denominations: [
                 {
                     id: 0,
-                    DenominationImages: require('../assets/images/Group57.jpg')
+                    DenominationImages: require('../assets/images/covenantNation.jpg')
                 },
                 {
                     id: 1,
@@ -65,7 +65,7 @@ export default {
                 },
                 {
                     id: 6,
-                    DenominationImages: require('../assets/images/Group57.jpg')
+                    DenominationImages: require('../assets/images/covenantNation.jpg')
                 },
                 {
                     id: 7,

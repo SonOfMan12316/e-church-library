@@ -1,10 +1,10 @@
 <template>
-    <form class=" mx-16 flex flex-row">
-        <input class="font-serif"  type="text" v-model="searchQ" placeholder="Search"/>
+    <div @submit="prevent" class=" mx-16 flex flex-row">
+        <input class="font-serif" @keydown.enter="changeNews" type="text" v-model="searchQ" placeholder="Search"/>
             <div class="secsearchbtn">
                 <SecSearchButton v-on:click="changeNews"/>
             </div>
-    </form>
+    </div>
 </template>
 
 <script>

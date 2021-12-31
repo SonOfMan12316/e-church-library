@@ -40,15 +40,13 @@ export default {
     },
     data() {
         return {
-            articles: [],
-            // searchQ: ''
+            articles: []
         }
     },
     methods: {
         getNews: function(query) {
-            var that = this;
+            var that = this
             var url = 'https://newsapi.org/v2/everything?' +
-            // 'q=christians&' +
             'q=' + query + '&' +
             'apiKey=03e626f76f9b41428758fc7202e3a169';
             var req = new Request(url);
@@ -57,17 +55,19 @@ export default {
                 return response.json();
             })
             .then(function(data) {
-                console.log(data);
                 that.articles = data.articles;
-            });
-            
-
-            this.searchQ = '';
+            })
         }
     },
-    mounted() {
-        this.getNews(this.searchQ);       
-    }
+    created() {
+        this.getNews();
+        // console.log('created')
+        // console.log(this.searchQ, 'created2'); 
+    },
+    // mounted() {
+    //     this.getNews(this.searchQ);       
+    //     console.log(this.searchQ, 'mounted');       
+    // }
 }
 </script>
 

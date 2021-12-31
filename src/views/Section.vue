@@ -1,32 +1,20 @@
 <template>
     <div>
-        <div class="section">
-            <Navigation/>
-            <div class="section-content p-6 sm:px-6 lg:px-16 xl:px-20">
-                <div class="section-info flex flex-col sm:flex-row sm:justify-between md:justify-around xl:justify-between xl:mx-20 justify-center items-center gap-y-6 my-14 sm:my-12 md:my-16 lg:my-20">
-                    <div class="section-image hidden sm:block">
-                        <div class="image">
-                            <img src="../assets/images/Group88.png" class="welcome">
-                        </div>
-                        <div class="font-serif text-base lg:text-lg font-normal text-gray-500">
-                            <p>Now faith is the assirance of things<br>hoped for, the conviction of things<br>not seen</p>
-                        </div>
-                        <div class="second-p rounded-lg text-white mt-1">
-                            <p class="font-serif text-base lg:text-xl font-bold px-2">Hebrew 11:1</p>
-                            <!-- 08063033768 -->
-                        </div>
+        <Navigation/>
+        <div class="">
+            
+            <!-- <CarouselApp class="carousel relative">
+                <CarouselSlide v-for="(slide, index) in carouselSlides" :key="index">
+                    <div class="slide-info absolute">
+                        <img :src="require(`../assets/${slide}.jpg`)"/>
                     </div>
-                    <div class="section-border py-2 lg:py-3">
-                        <p class="font-serif text-red-600 text-xl font-semibold text-center p-2 lg:py-4">Prayer Request</p>
-                        <form class="mx-5">
-                                <input type="name" v-model="name" name="name" placeholder="Name" class="outline-none text-tiny rounded-lg bg-transparent border-red-600 border-solid font-serif">
-                                <input type="email" v-model="email" name="email" placeholder="Email"  class="outline-none text-tiny rounded-lg bg-transparent border-red-600 border-solid font-serif">
-                                <textarea type="message" v-model="message" placeholder="Message" class="outline-none text-tiny bg-transparent rounded-lg border-red-600 border-solid font-serif"></textarea>
-                                <button @click="submit.prevent" class="bg-red-600 text-white font-serif font-medium text-lg">Submit</button>
-                        </form>
+                    <div>
+                        <p>Hello</p>
                     </div>
-                </div>
-            </div>
+                </CarouselSlide>
+            </CarouselApp> -->
+            <RealBanner/>
+            
         </div>        
         <Featured/>
         <Events/>
@@ -38,11 +26,15 @@
 
 <script>
 import Navigation from '../components/Navigation.vue'
+import RealBanner from '../components/RealBanner.vue'
 import Featured from '../components/Featured.vue'
 import Events from '../components/Events.vue'
 import GetFamiliar from '../components/GetFamiliar.vue'
 import News from '../components/News.vue'
 import Footer from '../components/Footer.vue'
+// import Carousel from '../components/Carousel.vue'
+// import CarouselSlide from '../components/CarouselSlide.vue'
+// import CarouselApp from '../components/CarouselApp.vue'
 export default {
     name: 'Section',
     components: {
@@ -51,7 +43,8 @@ export default {
         Events,
         GetFamiliar,
         News,
-        Footer
+        Footer,
+        RealBanner
     },
     data() {
         return {
@@ -61,6 +54,11 @@ export default {
                 message: ''
             }
         }
+    },
+    setup() {
+        const carouselSlides = ["bg-1", "bg-2", "bg-3"];
+
+        return { carouselSlides };
     },
     methods: {
     // handleSubmit() {
@@ -83,13 +81,40 @@ export default {
 </script>
 
 <style scoped>
+.carousel {
+    height: 100vh;
+    max-height: 100vh;
+}
 
+.slide-info {
+    top: 0;
+    width: 100%;
+    left: 0;
+    max-height: 100%;
+    max-height: 100%;
+}
 
-.section {
+img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* .section {
     background-image: url('../assets/images/sky-pattern-paradise-hd-free-church-baiyun-pull-material-9d3b8396d6ab6364c246950e89f5bd071.jpg');
     background-position: center;
     background-size: cover;
-}
+} */
+
+/* .section::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(0px);
+} */
 
 .section-border {
     border: 0.5px solid #CA0609;

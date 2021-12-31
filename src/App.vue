@@ -1,8 +1,8 @@
 <template>
   <div class="app">
-      <transition name="slide" type="transition" mode="out-in">
+      <!-- <transition name="slide" type="transition" mode="out-in"> -->
           <router-view></router-view>
-      </transition>
+      <!-- </transition> -->
   </div>
 </template>
 
@@ -22,7 +22,7 @@ html {
   position: relative;
 }
 
-.slide-enter {
+/* .slide-enter {
   opacity: 0;
 }
 
@@ -39,7 +39,7 @@ html {
   to {
       transform: translateX(0);
   } 
-}
+} */
 
 /* #nav {
   padding: 30px;

@@ -34,50 +34,36 @@
 
 <script>
 import FeaturedImages from '../components/FeaturedImages.vue'
-import Carousel from '../components/Carousel'
+// import Carousel from '../components/Carousel'
 export default {
     data () {
         return {
-            FeaturedImages: [
-                {
-                    id: 0,
-                    image: require('../assets/images/persistence.png'),
-                    paragraph: 'The Importance of Importunity'
-                },
-                {
-                    id: 1,
-                    image: require('../assets/images/FeaturedImage2.jpg'),
-                    paragraph: 'Do you think God cares about humans?'
-                },
-                {
-                    id: 2,
-                    image: require('../assets/images/FeaturedImage3.jpg'),
-                    paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
-                }
-                // ,
-                // {
-                //     id: 3,
-                //     image: require('../assets/images/FeaturedImage3.jpg'),
-                //     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
-                // },
-                // {
-                //     id: 4,
-                //     image: require('../assets/images/FeaturedImage3.jpg'),
-                //     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
-                // },
-                // {
-                //     id: 5,
-                //     image: require('../assets/images/FeaturedImage3.jpg'),
-                //     paragraph: 'Depression kills, manage stress By Pastor O. Tayo'
-                // },
-            ],
+            FeaturedImages: [],
             // visibleSlide: 0,
+            // https://www.pof.com/viewprofile?profileId=305639507
             // direction: ''
         }
     },
+    created() {
+        // getBooks() {
+            // fetch("https://google-books.p.rapidapi.com/volumes?key=undefined", {
+	        //     "method": "GET",
+	        //     "headers": {
+		    //                 "x-rapidapi-host": "google-books.p.rapidapi.com",
+		    //                 "x-rapidapi-key": "c6a90fa502msh6687fb62a8ce16ap11e891jsn709ac6ce6bf5"
+	        //     }
+            // })
+            // .then(response => {
+            //     console.log(response.data);
+            // })
+            // .catch(err => {
+            //     console.error(err);
+            // });
+        // }
+    },
     components: {
         FeaturedImages,
-        Carousel
+        // Carousel
     },
     // computed: {
     //     slideLens() {
