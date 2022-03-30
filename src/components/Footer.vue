@@ -1,7 +1,7 @@
 <template>
-    <footer>
-        <div class="footer-content p-6 sm:p-8 lg:p-16 xl:p-20 flex flex-col gap-y-4">
-            <div class="flex flex-col footer1">
+    <div class="footer" style="background-color: rgba(202, 6, 9, 1);">
+        <div class="footer-content sm:grid sm:grid-cols-2 lg:grid-cols-3 p-6 sm:p-8 lg:p-16 xl:p-20">
+            <div class="flex flex-col">
                 <div class="footerlogo flex justify-start items-center mb-10">
                     <Logo/>
                 </div>
@@ -80,11 +80,9 @@
                         <p class="font-medium text-tiny lg:text-base font-serif text-white pb-1">eChurchlibrary@gmail.com</p>
                     </li>
                 </ul>                                       
-            </div>            
-        </div>      
-        <div>
-            </div> 
-    </footer>
+            </div>   
+        </div>
+    </div>
 </template>
 
 <script>
@@ -98,69 +96,6 @@ export default {
 }
 </script>
 
-<style scoped>
-    footer {
-        background: rgba(202, 6, 9, 1);
-    }
+<style>
 
-    /* .footerlogo {
-        background: #FFFFFF;
-        border-radius: 10px;
-        width: 10rem;
-        height: 2rem;
-    } */
-
-    p,
-    .lorem {
-        letter-spacing: -0.03em;
-    }
-
-    .line {
-        content: "";
-        display: block;
-        width: 40px;
-        /* height: 1px; */
-        border: 1px solid #fff;
-        background-color: #fff;
-        border-radius: 10px;
-    }
-
-    @media (min-width: 768px) {
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-            gap: 2rem;
-        }    
-        
-        .lorem {
-            width: 80%;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .footerlogo {
-            width: 13rem;
-            height: 3rem;
-        }
-    }
-
-    @media (min-width: 1200px) {
-        .footer1 {
-            width: 110%;
-        }
-
-        .lorem {
-            width: 100%;
-        }
-
-        /* .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-            gap: 3rem;
-        }  */
-    }
-
-    @media (min-width: 1800px) {
-        
-    }
 </style>
