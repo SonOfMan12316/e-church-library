@@ -32,6 +32,9 @@ export default {
         const carouselSlides = ["bg-2", "bg-3", "bg-1"];
         
         return { carouselSlides };
+    },
+    watch() {
+        this.carouselSlides[0]
     }
 }
 </script>

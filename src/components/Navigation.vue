@@ -1,6 +1,6 @@
 <template>
     <header :class="{ 'scrolled-nav' : scrolledNav }" class="relative transition duration-500">
-        <nav class="flex flex-col lg:flex-row justify-center px-6 sm:px-6 lg:px-16  xl:px-20 lg:py-8">
+        <nav class="flex flex-col lg:flex-row justify-center px-6 sm:px-6 lg:px-16  xl:px-20 lg:py-8 z-10">
             <div class="nav-content">    
                 <div>
                     <router-link to="/" class="lg:flex lg:items-center"> 
@@ -25,8 +25,9 @@
                 <div class="icon flex absolute items-center"> 
                     <img @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': MobileNav}" class=" img w-8"  src="https://img.icons8.com/material/50/000000/menu--v1.png"/>
                 </div>
-                <transition name="mobile-nav">
-                    <ul v-show="mobileNav" class="dropdown-nav flex flex-col gap-y-4 fixed bg-red-600">  
+                <transition name="mobile-nav" class="">
+                    
+                    <ul v-show="mobileNav" class="dropdown-nav flex flex-col gap-y-4 fixed bg-red-600 z-50 w-screen">  
                         <div class="ml-2 md:mt-1 lg:mt-3">
                             <CancelSvg  @click="toggleIsSelected" :class="{ 'selected' : IsSelected }"/>    
                         </div>    
@@ -175,7 +176,8 @@ input[type=text] {
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 100vw;
+    height: 100%;
     padding: 1rem 0;
     transition: 0.1s ease-in-out;
 }

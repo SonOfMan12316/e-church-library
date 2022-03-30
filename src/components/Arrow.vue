@@ -1,6 +1,5 @@
 <template>
     <div>
-        
         <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="18" height="12" fill="#E8E8E8"/>
             <g clip-path="url(#clip0)">

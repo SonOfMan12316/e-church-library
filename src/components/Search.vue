@@ -1,5 +1,5 @@
 <template>
-    <div @submit="prevent" class=" mx-16 flex flex-row">
+    <div @submit="prevent" class=" mx-2 lg:mx-16 flex flex-row">
         <input class="font-serif" @keydown.enter="changeNews" type="text" v-model="searchQ" placeholder="Search"/>
             <div class="secsearchbtn">
                 <SecSearchButton v-on:click="changeNews"/>

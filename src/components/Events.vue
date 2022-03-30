@@ -13,6 +13,7 @@
             </div>
             <div>
                 <Search
+                class="mt-2"
                 v-on:newsChanged="getNews"
                 />
             </div>

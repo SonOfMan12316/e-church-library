@@ -2,8 +2,8 @@
     <footer>
         <div class="footer-content p-6 sm:p-8 lg:p-16 xl:p-20 flex flex-col gap-y-4">
             <div class="flex flex-col footer1">
-                <div class="footerlogo flex justify-center items-center mb-10">
-                    <FooterLogo/>
+                <div class="footerlogo flex justify-start items-center mb-10">
+                    <Logo/>
                 </div>
                 <p class="lorem font-normal text-tiny lg:text-base font-serif text-white mb-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis</p>
                 <div class="flex flex-row items-center gap-x-4">
@@ -88,11 +88,11 @@
 </template>
 
 <script>
-import FooterLogo from '../components/FooterLogo.vue'
+import Logo from '../components/Logo.vue'
 import ArrowRight from '../components/ArrowRight.vue'
 export default {
     components: {
-        FooterLogo,
+        Logo,
         ArrowRight
     }
 }
@@ -103,12 +103,12 @@ export default {
         background: rgba(202, 6, 9, 1);
     }
 
-    .footerlogo {
+    /* .footerlogo {
         background: #FFFFFF;
         border-radius: 10px;
         width: 10rem;
         height: 2rem;
-    }
+    } */
 
     p,
     .lorem {
@@ -158,5 +158,9 @@ export default {
             grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
             gap: 3rem;
         }  */
+    }
+
+    @media (min-width: 1800px) {
+        
     }
 </style>

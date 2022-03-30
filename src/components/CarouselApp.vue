@@ -1,23 +1,22 @@
 <template>
     <div class="carousel">
             <slot :currentSlide="currentSlide" />
-
-        <div v-if="navEnabled" class="navigate">
-            <div class="toggle-page left">
-                <i @click="prevSlide" class="fas fa-chevron-left flex justify-center items-center"></i>
-            </div>
-            <div class="toggle-page right">
-                <i @click="nextSlide" class="fas fa-chevron-right flex justify-center items-center"></i>
-            </div>
-        </div>    
-        <div class="pagination" v-if="paginationEnabled">
-            <span 
-            @click="goToSlide(index)"
-            v-for="(slide, index) in getSlideCount" 
-            :key="index" 
-            :class="{ active: index + 1 === currentSlide }">
-            </span>           
-        </div>  
+                <!-- <div v-if="navEnabled" class="navigate">
+                    <div class="toggle-page left">
+                        <i @click="prevSlide" class="fas fa-chevron-left flex justify-center items-center"></i>
+                    </div>
+                    <div class="toggle-page right">
+                        <i @click="nextSlide" class="fas fa-chevron-right flex justify-center items-center"></i>
+                    </div>
+                </div>     -->
+                <div class="pagination" v-if="paginationEnabled">
+                    <span 
+                    @click="goToSlide(index)"
+                    v-for="(slide, index) in getSlideCount" 
+                    :key="index" 
+                    :class="{ active: index + 1 === currentSlide }">
+                    </span>           
+                </div>  
     </div>
 </template>
 
@@ -32,7 +31,7 @@ export default {
             props.startAutoPlay === undefined ? true : props.startAutoPlay
         );
         const timeoutDuration = ref(
-            props.timeout === undefined ? 5000 : props.timeout
+            props.timeout === undefined ? 3000 : props.timeout
         );
         const paginationEnabled = ref(
             props.pagination === undefined ? true : props.pagination
