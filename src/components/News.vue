@@ -12,7 +12,9 @@
                     <button class="font-bold lg:text-base text-tiny font-serif">Subscribe</button>    
                 </div>                
             </form>
-            <p class="font-normal text-center text-tiny font-serif mt-4">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean ligula eget dolor. Aenean massa. Cum sociis natoque penatibu</p>
+            <!-- <div class="w-full">
+                <p class="font-normal text-center text-tiny font-serif mt-4 w-full">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean ligula eget dolor. Aenean massa. Cum sociis natoque penatibu</p>
+            </div> -->
         </div>
     </div>
 </template>
