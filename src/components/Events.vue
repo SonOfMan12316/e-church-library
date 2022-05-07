@@ -57,6 +57,7 @@ export default {
             })
             .then(function(data) {
                 that.articles = data.articles;
+                console.log(data)
             })
         }
     },

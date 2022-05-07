@@ -32,6 +32,7 @@ import Events from '../components/Events.vue'
 import GetFamiliar from '../components/GetFamiliar.vue'
 import News from '../components/News.vue'
 import Footer from '../components/Footer.vue'
+import NewsApi from '../components/NewsApi.vue'
 // import Carousel from '../components/Carousel.vue'
 // import CarouselSlide from '../components/CarouselSlide.vue'
 // import CarouselApp from '../components/CarouselApp.vue'
@@ -44,7 +45,8 @@ export default {
         GetFamiliar,
         News,
         Footer,
-        RealBanner
+        RealBanner,
+        NewsApi
     },
     data() {
         return {
