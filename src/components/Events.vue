@@ -45,7 +45,7 @@ export default {
         }
     },
     methods: {
-        getNews: function(query) {
+        getNews(query) {
             var that = this
             var url = 'https://newsapi.org/v2/everything?' +
             'q=' + query + '&' +

@@ -1,8 +1,8 @@
 <template>
     <div class="denominationimages">
-        <router-link to="/section">
-            <img :src="images"/>
-        </router-link>
+        <!-- <router-link to="/section"> -->
+            <img :src="images" class=""/>
+        <!-- </router-link> -->
     </div>
 </template>
 

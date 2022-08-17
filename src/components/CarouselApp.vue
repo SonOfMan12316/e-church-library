@@ -1,6 +1,6 @@
 <template>
     <div class="carousel">
-            <slot :currentSlide="currentSlide" />
+        <slot :currentSlide="currentSlide"/>
                 <!-- <div v-if="navEnabled" class="navigate">
                     <div class="toggle-page left">
                         <i @click="prevSlide" class="fas fa-chevron-left flex justify-center items-center"></i>
@@ -9,14 +9,14 @@
                         <i @click="nextSlide" class="fas fa-chevron-right flex justify-center items-center"></i>
                     </div>
                 </div>     -->
-                <div class="pagination" v-if="paginationEnabled">
-                    <span 
-                    @click="goToSlide(index)"
-                    v-for="(slide, index) in getSlideCount" 
-                    :key="index" 
-                    :class="{ active: index + 1 === currentSlide }">
-                    </span>           
-                </div>  
+            <div class="pagination" v-if="paginationEnabled">
+                <span 
+                @click="goToSlide(index)"
+                v-for="(slide, index) in getSlideCount" 
+                :key="index" 
+                :class="{ active: index + 1 === currentSlide }">
+                </span>           
+            </div>  
     </div>
 </template>
 
@@ -63,9 +63,7 @@ export default {
         };
 
         const autoPlay = () => {
-            setInterval(() => {
-                nextSlide();
-            }, timeoutDuration.value);
+            setInterval(() => { nextSlide() }, timeoutDuration.value);
         };
 
         if (autoPlayEnabled.value) {
@@ -130,7 +128,7 @@ i {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
-.pagination span .active {
+span .active {
     background-color: rgb(238, 6, 84);
     display: none;
 }

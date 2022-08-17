@@ -2,7 +2,6 @@
     <div>
         <Navigation/>
         <div class="">
-            
             <!-- <CarouselApp class="carousel relative">
                 <CarouselSlide v-for="(slide, index) in carouselSlides" :key="index">
                     <div class="slide-info absolute">

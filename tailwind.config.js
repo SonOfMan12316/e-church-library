@@ -8,8 +8,12 @@ module.exports = {
     fontSize: {
       'xs': '.75rem',
       'tiny': '.875rem',
-      'base': '1rem',
-      'lg': '1.125rem',
+      'base': ['1rem',{
+        letterSpacing: '-0.05em'
+      }],
+      'lg': ['1.125rem',{
+        letterSpacing: '-0.05em'
+      }],
       'xl': ['1.25rem',{
         letterSpacing: '-0.05em'
       }],

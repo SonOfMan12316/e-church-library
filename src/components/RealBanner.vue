@@ -4,17 +4,11 @@
         :navigation="true"
         :pagination="true"
         :startAutoPlay="true"
-         class="carousel relative" v-slot="{ currentSlide }">
+        class="carousel relative" v-slot="{ currentSlide }">
             <CarouselSlide v-for="(slide, index) in carouselSlides" :key="index">
                 <div class="slide-info absolute" v-show="currentSlide === index + 1">
                     <img :src="require(`../assets/images/${slide}.jpg`)"/>
                 </div>
-                <!-- <div class="slide-info absolute">
-                    <img :src="require(`../assets/${slide}.jpg`)"/>
-                </div>
-                <div>
-                    <p>Hello</p>
-                </div> -->
             </CarouselSlide>
         </CarouselApp>
     </div>
