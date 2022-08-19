@@ -40,7 +40,6 @@ export default {
             props.navigation === undefined ? true : props.navigation
         );
 
-        // next slide
         const nextSlide = () => {
             if ( currentSlide.value === getSlideCount.value ){
                 currentSlide.value = 1;
@@ -49,7 +48,7 @@ export default {
             currentSlide.value += 1;
         };
 
-        // prev slide
+
         const prevSlide = () => {
             if ( currentSlide.value === getSlideCount.value ){
                 currentSlide.value = 1;

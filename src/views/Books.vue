@@ -15,7 +15,15 @@ export default {
         HeroFooter,
         Navigation,
         NewsApi
-    }
+    },
+    // created() {
+    //     fetchData() {
+    //         // url: 'http://api.mediastack.com/v1/news ? access_key = ad9b3abd2ea6d8b7eca54397d22883d3'
+    //         await axios.get(url).then(
+    //             console.log(data)
+    //         )
+    //     }
+    // }
 }
 </script>
 

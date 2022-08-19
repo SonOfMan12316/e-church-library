@@ -57,33 +57,44 @@ export default {
         }
     },
     methods: {
-        fetchData() {
-            var that = this;
-            const options = {
-            
-            method: 'GET',
-            url: 'https://extract-news.p.rapidapi.com/v0/article',
-            params: {
-                url: 'https://www.theverge.com/2020/4/17/21224728/bill-gates-coronavirus-lies-5g-covid-19'
-            },
-            headers: {
-                'X-RapidAPI-Host': 'extract-news.p.rapidapi.com',
-                'X-RapidAPI-Key': 'c4b2a091b4msh28a4572761a2e24p1f65c1jsnb63fd98adca6'
-            }
-            };
-
-            axios.request(options)
-            .then(function (response) {
-                return response;
-            })
-            .then(function (data) {
-                that.articles = data.data;
-
-                console.log(data.data);
-            })
-            .catch(function (error) {
-                console.error(error);
+        async fetchData() {
+            let res = await axios.get('http://api.mediastack.com/v1/news?access_key=ad9b3abd2ea6d8b7eca54397d22883d3&keywords=christian&countries=ng')
+            .then(function (res) {
+                console.log(res.data.data)
+            }).catch(function (error) {
+                console.error(error.message);
             });
+        }
+    },
+    // methods: {
+    
+    //     fetchData() {
+    //         var that = this;
+    //         const options = {
+   // http://api.mediastack.com/v1/news?access_key=YOUR_ACCESS_KEY&sources=cnn,-bbc
+    //         method: 'GET',
+    //         url: 'https://extract-news.p.rapidapi.com/v0/article',
+    //         params: {
+    //             url: 'https://www.theverge.com/2020/4/17/21224728/bill-gates-coronavirus-lies-5g-covid-19'
+    //         },
+    //         headers: {
+    //             'X-RapidAPI-Host': 'extract-news.p.rapidapi.com',
+    //             'X-RapidAPI-Key': 'c4b2a091b4msh28a4572761a2e24p1f65c1jsnb63fd98adca6'
+    //         }
+    //         };
+
+    //         axios.request(options)
+    //         .then(function (response) {
+    //             return response;
+    //         })
+    //         .then(function (data) {
+    //             that.articles = data.data;
+
+    //             console.log(data.data);
+    //         })
+    //         .catch(function (error) {
+    //             console.error(error);
+    //         });
 //            const options = {
 //   method: 'GET',
 //   url: 'https://extract-news.p.rapidapi.com/v0/article',
@@ -110,7 +121,7 @@ export default {
         // // .then(response => this.posts = response.data)
         // .then(response => this.posts = response.data);
         // this.show = !this.show
-        }
+        // }
         // reloadPage() {
         //     window.location.reload();
         // },
@@ -121,7 +132,7 @@ export default {
 // })
 
 //         }
-    },
+    // },
     mounted() {
         
         }

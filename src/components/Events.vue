@@ -12,10 +12,10 @@
                 </div>
             </div>
             <div>
-                <Search
+                <!-- <Search
                 class="mt-2"
                 v-on:newsChanged="getNews"
-                />
+                /> -->
             </div>
             <EventsContent
             v-for="newsArticle in articles"
@@ -30,14 +30,14 @@
 import Arrow from '../components/Arrow.vue'
 import EventsContent from '../components/EventsContent.vue'
 import SecSearchButton from '../components/SecSearchButton.vue'
-import Search from '../components/Search.vue'
+// import Search from '../components/Search.vue'
 
 export default {
     components: {
         Arrow,
         EventsContent,
         SecSearchButton,
-        Search
+        // Search
     },
     data() {
         return {
@@ -45,24 +45,45 @@ export default {
         }
     },
     methods: {
-        getNews(query) {
-            var that = this
-            var url = 'https://newsapi.org/v2/everything?' +
-            'q=' + query + '&' +
-            'apiKey=03e626f76f9b41428758fc7202e3a169';
-            var req = new Request(url);
-            fetch(req)
-            .then(function(response) {
-                return response.json();
-            })
-            .then(function(data) {
-                that.articles = data.articles;
-                console.log(data)
-            })
+        // getNews(query) {
+        //     var that = this
+        //     var url = 'https://newsapi.org/v2/everything?' +
+        //     'q=' + query + '&' +
+        //     'apiKey=03e626f76f9b41428758fc7202e3a169';
+        //     var req = new Request(url);
+        //     fetch(req)
+        //     .then(function(response) {
+        //         return response.json();
+        //     })
+        //     .then(function(data) {
+        //         that.articles = data.articles;
+        //         console.log(data)
+        //     })
+        // }
+        async fetchData() {
+            let that = this;
+            let res = await axios.get('http://api.mediastack.com/v1/news?access_key=ad9b3abd2ea6d8b7eca54397d22883d3&keywords=religion&countries=ng')
+                .then(function (res) {
+                    return res
+             })
+             .then(function(data) {
+                 that.articles = data.data.data;
+                       console.log(data.data.data)
+                }).catch(function (error) {
+                    console.error(error.message);
+                });
         }
     },
+    // computed: {
+    //     filteredItems() {
+    //         return this.articles.filter((article) => {
+    //             return article.image !== null
+    //         })
+    //     }
+    // },
     created() {
-        this.getNews();
+        // this.getNews();
+        this.fetchData()
         // console.log('created')
         // console.log(this.searchQ, 'created2'); 
     },
