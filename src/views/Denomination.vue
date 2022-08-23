@@ -34,7 +34,7 @@
 
 <script>
 import DenominationBanner from '../components/DenominationBanner.vue';
-import DenominationImages from '../components/DenominationImages.vue';
+// import DenominationImages from '../components/DenominationImages.vue';
 import Quote from '../components/Quote.vue'
 export default {
     data() {
@@ -96,7 +96,7 @@ export default {
     components: {
         DenominationBanner,
         Quote,
-        DenominationImages
+        // DenominationImages
     }
 }
 </script>
