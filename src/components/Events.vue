@@ -6,10 +6,10 @@
                     <h2 class="text-red-700 text-xl lg:text-2xl xl:text-3xl font-semibold mb-1 font-serif">Upcoming Events</h2>
                     <div class="line "></div>
                 </div>
-                <div class="jo flex flex-row justify-end items-center -mt-1">
+                <!-- <div class="jo flex flex-row justify-end items-center -mt-1">
                     <h1 class="font-serif font-normal text-tiny sm:text-base lg:text-xl">View All</h1>
                     <Arrow/>
-                </div>
+                </div> -->
             </div>
             <div>
                 <!-- <Search
@@ -18,7 +18,7 @@
                 /> -->
             </div>
             <EventsContent
-            v-for="newsArticle in articles"
+            v-for="newsArticle in filteredItems"
             :key="newsArticle.index"
             :data="newsArticle" 
             />
@@ -62,7 +62,7 @@ export default {
         // }
         async fetchData() {
             let that = this;
-            let res = await axios.get('http://api.mediastack.com/v1/news?access_key=ad9b3abd2ea6d8b7eca54397d22883d3&keywords=religion&countries=ng')
+            let res = await axios.get('http://api.mediastack.com/v1/news?access_key=ad9b3abd2ea6d8b7eca54397d22883d3&keywords=churchs&countries=ng')
                 .then(function (res) {
                     return res
              })
@@ -74,14 +74,14 @@ export default {
                 });
         }
     },
-    // computed: {
-    //     filteredItems() {
-    //         return this.articles.filter((article) => {
-    //             return article.image !== null
-    //         })
-    //     }
-    // },
-    created() {
+      computed: {
+          filteredItems() {
+             return this.articles.filter((article) => {
+                  return article.description.length  > 100
+             })
+          }
+    },
+    mounted() {
         // this.getNews();
         this.fetchData()
         // console.log('created')

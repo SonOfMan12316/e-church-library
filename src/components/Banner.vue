@@ -32,7 +32,7 @@ export default {
 
 <style scoped>
 .banner {
-    background-image: url('../assets/images/sixteen-miles-out-PpJOb2ByPBY-unsplash2(3).jpg');
+    background-image: url('../assets/images/firstlandingpage-min.jpg');
     height: 100vh;
     width: 100vw;
     background-size: cover;

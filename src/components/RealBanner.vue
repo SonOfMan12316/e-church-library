@@ -23,7 +23,7 @@ export default {
         CarouselSlide
     },
     setup() {
-        const carouselSlides = ["bg-2", "bg-3", "bg-1"];
+        const carouselSlides = ["bgii-min", "bg-3", "bg-min"];
         
         return { carouselSlides };
     },

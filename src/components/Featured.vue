@@ -93,7 +93,7 @@ export default {
 
 <style scoped>
 .features {
-    background-image: url('../assets/images/FeaturedBg.jpg');
+    background-image: url('../assets/images/featuredbg-min.jpg');
     background-position: center;
     background-size: cover;
 }
