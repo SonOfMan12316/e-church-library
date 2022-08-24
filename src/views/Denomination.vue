@@ -34,7 +34,7 @@
 
 <script>
 import DenominationBanner from '../components/DenominationBanner.vue';
-// import DenominationImages from '../components/DenominationImages.vue';
+// import DenominationImages from '@/com'
 import Quote from '../components/Quote.vue'
 export default {
     data() {
@@ -44,51 +44,51 @@ export default {
             Denominations: [
                 {
                     id: 0,
-                    DenominationImages: require('../assets/images/covenantnation.jpg')
+                    DenominationImages: require('@/assets/images/covenantnation.jpg')
                 },
                 {
                     id: 1,
-                    DenominationImages: require('../assets/images/christembassy.jpg')
+                    DenominationImages: require('@/assets/images/christembassy.jpg')
                 },
                 {
                     id: 2,
-                    DenominationImages: require('../assets/images/elevation.jpg')
+                    DenominationImages: require('@/assets/images/elevation.jpg')
                 },
                 {
                     id: 3,
-                    DenominationImages: require('../assets/images/redeemchurch.jpg')
+                    DenominationImages: require('@/assets/images/redeemchurch.jpg')
                 },
                 {
                     id: 4,
-                    DenominationImages: require('../assets/images/celestialchurch.jpg')
+                    DenominationImages: require('@/assets/images/celestialchurch.jpg')
                 },
                 {
                     id: 5,
-                    DenominationImages: require('../assets/images/mountainoffire.jpg')
+                    DenominationImages: require('@/assets/images/mountainoffire.jpg')
                 },
                 {
                     id: 6,
-                    DenominationImages: require('../assets/images/covenantnation.jpg')
+                    DenominationImages: require('@/assets/images/covenantnation.jpg')
                 },
                 {
                     id: 7,
-                    DenominationImages: require('../assets/images/christembassy.jpg')
+                    DenominationImages: require('@/assets/images/christembassy.jpg')
                 },
                 {
                     id: 8,
-                    DenominationImages: require('../assets/images/elevation.jpg')
+                    DenominationImages: require('@/assets/images/elevation.jpg')
                 },
                 {
                     id: 9,
-                    DenominationImages: require('../assets/images/redeemchurch.jpg')
+                    DenominationImages: require('@/assets/images/redeemchurch.jpg')
                 },
                 {
                     id: 10,
-                    DenominationImages: require('../assets/images/celestialchurch.jpg')
+                    DenominationImages: require('@/assets/images/celestialchurch.jpg')
                 },
                 {
                     id: 11,
-                    DenominationImages: require('../assets/images/mountainoffire.jpg')
+                    DenominationImages: require('@/assets/images/mountainoffire.jpg')
                 }
             ]
         }
