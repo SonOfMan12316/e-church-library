@@ -9,8 +9,6 @@
                     <div class="content1 flex flex-row justify-between">
                         <div>
                             <h2 class="text-lg sm:text-xl lg:text-2xl font-bold font-serif text-black">{{ data.title }}</h2>
-                            <!-- <p class="last-para font-normal font-serif text-tiny sm:text-base xl-text-xl">{{ data.source
-                                }}</p> -->
                         </div>
                         <div class="flex flex-row items-center mt-1">
                             <!-- <p class="para font-serif text-tiny sm:text-base lg:text-xl">{{ (data.publishedAt).toLocaleDateString('en-US', {month: '2-digit', day: '2-digit', year: '2-digit'}) }}</p> -->
