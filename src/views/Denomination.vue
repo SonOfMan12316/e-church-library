@@ -20,16 +20,10 @@
                     </p>
                     <div
                         class="denominationimages2 grid grid-cols-3 gap-3 sm:gap-y-3 sm:gap-x-4 gap w-72 sm:w-96 md:w-9/12 lg:w-10/12">
-                        <!-- <div v-for="Denomination in Denominations" :key="Denomination.id">
-                            <router-link to="/section">
-                                <img :src="Denomination.DenominationImages" class="md:w-40" />
-                            </router-link>
-                        </div> -->
-                        <!-- <router-view v-slot="{ Section }">
-                            <transition name="fade">
-                                <component :is="Section" />
-                            </transition>
-                        </router-view> -->
+                        <DenominationImages 
+                                v-for="Denomination in Denominations" 
+                                :key="Denomination.id" 
+                                :images="Denomination.DenominationImages"/>
                     </div>
                 </div>
             </div>
@@ -39,70 +33,76 @@
 
 <script>
 import DenominationBanner from '../components/DenominationBanner.vue';
-// import DenominationImages from '@/com'
+import DenominationImages from '../components/DenominationImages.vue'
 import Quote from '../components/Quote.vue'
 export default {
     data() {
         return {
             image: require('../assets/images/denominationbg.jpg'),
             Image: require('../assets/images/strengthenfaith.jpg'),
-            // Denominations: [
-            //     {
-            //         id: 0,
-            //         DenominationImages: require('@/assets/images/covenantnation.jpg')
-            //     },
-            //     {
-            //         id: 1,
-            //         DenominationImages: require('@/assets/images/christembassy.jpg')
-            //     },
-            //     {
-            //         id: 2,
-            //         DenominationImages: require('@/assets/images/elevation.jpg')
-            //     },
-            //     {
-            //         id: 3,
-            //         DenominationImages: require('@/assets/images/redeemchurch.jpg')
-            //     },
-            //     {
-            //         id: 4,
-            //         DenominationImages: require('@/assets/images/celestialchurch.jpg')
-            //     },
-            //     {
-            //         id: 5,
-            //         DenominationImages: require('@/assets/images/mountainoffire.jpg')
-            //     },
-            //     {
-            //         id: 6,
-            //         DenominationImages: require('@/assets/images/covenantnation.jpg')
-            //     },
-            //     {
-            //         id: 7,
-            //         DenominationImages: require('@/assets/images/christembassy.jpg')
-            //     },
-            //     {
-            //         id: 8,
-            //         DenominationImages: require('@/assets/images/elevation.jpg')
-            //     },
-            //     {
-            //         id: 9,
-            //         DenominationImages: require('@/assets/images/redeemchurch.jpg')
-            //     },
-            //     {
-            //         id: 10,
-            //         DenominationImages: require('@/assets/images/celestialchurch.jpg')
-            //     },
-            //     {
-            //         id: 11,
-            //         DenominationImages: require('@/assets/images/mountainoffire.jpg')
-            //     }
-            // ]
+            Denominations: [
+            {
+                     id: 0,
+                     DenominationImages: require('@/assets/images/covenant.jpg')
+                 },
+                 {
+                     id: 1,
+                     DenominationImages: require('@/assets/images/christembassy.jpg')
+                 },
+                 {
+                    id: 2,
+                     DenominationImages: require('@/assets/images/elevation.jpg')
+                 },
+                 {
+                     id: 3,
+                     DenominationImages: require('@/assets/images/redeemchurch.jpg')
+                 },
+                 {
+                     id: 4,
+                     DenominationImages: require('@/assets/images/celestialchurch.jpg')
+                 },
+                 {
+                     id: 5,
+                 DenominationImages: require('@/assets/images/mountainoffire.jpg')
+                 },
+                 {
+                     id: 6,
+                     DenominationImages: require('@/assets/images/covenant.jpg')
+                 },
+                 {
+                     id: 7,
+                     DenominationImages: require('@/assets/images/christembassy.jpg')
+                 },
+                 {
+                     id: 8,
+                     DenominationImages: require('@/assets/images/elevation.jpg')
+                 },
+                 {
+                     id: 9,
+                     DenominationImages: require('@/assets/images/redeemchurch.jpg')
+                 },
+                 {
+                     id: 10,
+                 DenominationImages: require('@/assets/images/celestialchurch.jpg')
+                 },
+                 {
+                     id: 11,
+                     DenominationImages: require('@/assets/images/mountainoffire.jpg')
+                 }
+            ]
         }
     },
     components: {
         DenominationBanner,
         Quote,
-        // DenominationImages
-    }
+        DenominationImages
+    },
+    // mounted() {
+    //     function move() {
+    //         this.$router.push("/section")
+    //     }
+    //     setInterval(move, 2000) 
+    // }
 }
 </script>
 
