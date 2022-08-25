@@ -20,11 +20,11 @@
                     </p>
                     <div
                         class="denominationimages2 grid grid-cols-3 gap-3 sm:gap-y-3 sm:gap-x-4 gap w-72 sm:w-96 md:w-9/12 lg:w-10/12">
-                        <div v-for="Denomination in Denominations" :key="Denomination.id">
+                        <!-- <div v-for="Denomination in Denominations" :key="Denomination.id">
                             <router-link to="/section">
                                 <img :src="Denomination.DenominationImages" class="md:w-40" />
                             </router-link>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -41,56 +41,7 @@ export default {
         return {
             image: require('../assets/images/denominationbg.jpg'),
             Image: require('../assets/images/strengthenfaith.jpg'),
-            Denominations: [
-                {
-                    id: 0,
-                    DenominationImages: require('@/assets/images/covenantnation.jpg')
-                },
-                {
-                    id: 1,
-                    DenominationImages: require('@/assets/images/christembassy.jpg')
-                },
-                {
-                    id: 2,
-                    DenominationImages: require('@/assets/images/elevation.jpg')
-                },
-                {
-                    id: 3,
-                    DenominationImages: require('@/assets/images/redeemchurch.jpg')
-                },
-                {
-                    id: 4,
-                    DenominationImages: require('@/assets/images/celestialchurch.jpg')
-                },
-                {
-                    id: 5,
-                    DenominationImages: require('@/assets/images/mountainoffire.jpg')
-                },
-                {
-                    id: 6,
-                    DenominationImages: require('@/assets/images/covenantnation.jpg')
-                },
-                {
-                    id: 7,
-                    DenominationImages: require('@/assets/images/christembassy.jpg')
-                },
-                {
-                    id: 8,
-                    DenominationImages: require('@/assets/images/elevation.jpg')
-                },
-                {
-                    id: 9,
-                    DenominationImages: require('@/assets/images/redeemchurch.jpg')
-                },
-                {
-                    id: 10,
-                    DenominationImages: require('@/assets/images/celestialchurch.jpg')
-                },
-                {
-                    id: 11,
-                    DenominationImages: require('@/assets/images/mountainoffire.jpg')
-                }
-            ]
+            // /
         }
     },
     components: {
