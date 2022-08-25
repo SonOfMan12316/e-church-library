@@ -25,6 +25,11 @@
                                 <img :src="Denomination.DenominationImages" class="md:w-40" />
                             </router-link>
                         </div>
+                        <!-- <router-view v-slot="{ Section }">
+                            <transition name="fade">
+                                <component :is="Section" />
+                            </transition>
+                        </router-view> -->
                     </div>
                 </div>
             </div>
