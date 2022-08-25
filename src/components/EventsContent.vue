@@ -15,7 +15,8 @@
                             <p class="para font-serif text-tiny sm:text-base">{{ formatUnix(data.published_at) }}</p>
                         </div>
                     </div>
-                    <h1 class=" font-serif font-medium text-base xl:mb-1">{{ data.description.substring(14).slice(0, -14) }}</h1>
+                    <!-- <h1 class=" font-serif font-medium text-base xl:mb-1">{{ data.description.substring(14).slice(0, -14) }}</h1> -->
+                    <h1 class=" font-serif font-medium text-base xl:mb-1">{{ data.description }}</h1>
                 </a>
             </div>
         </div>

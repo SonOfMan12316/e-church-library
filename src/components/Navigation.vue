@@ -23,13 +23,13 @@
                 </div>
             </div> 
                 <div class="icon flex absolute items-center"> 
-                    <img @click="toggleMobileNav" v-show="mobile" :class="{ 'icon-active': MobileNav}" class=" img w-8"  src="https://img.icons8.com/material/50/000000/menu--v1.png"/>
+                    <img @click="toggleMobileNav" v-show="mobile" class=" img w-8"  src="https://img.icons8.com/material/50/000000/menu--v1.png"/>
                 </div>
                 <transition name="mobile-nav" class="">
                     
                     <ul v-show="mobileNav" class="dropdown-nav flex flex-col gap-y-4 fixed bg-red-600 z-50 w-screen">  
                         <div class="ml-2 md:mt-1 lg:mt-3">
-                            <CancelSvg  @click="toggleIsSelected" :class="{ 'selected' : IsSelected }"/>    
+                            <CancelSvg  @click="toggleIsSelected" />    
                         </div>    
                         <li class=""><router-link to="/" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Home</router-link></li>
                         <li class=""><router-link to="/audioVideo" class="link font-serif not-italic text-base md:text-lg lg:text-xl text-white ml-3 mt-6 md:mt-8 lg:mt-10">Audio &amp; Video</router-link></li>

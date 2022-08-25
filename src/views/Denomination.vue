@@ -21,9 +21,9 @@
                     <div
                         class="denominationimages2 grid grid-cols-3 gap-3 sm:gap-y-3 sm:gap-x-4 gap w-72 sm:w-96 md:w-9/12 lg:w-10/12">
                         <DenominationImages 
-                                v-for="Denomination in Denominations" 
-                                :key="Denomination.id" 
-                                :images="Denomination.DenominationImages"/>
+                        v-for="Denomination in Denominations" 
+                        :key="Denomination.id" 
+                        :images="Denomination.DenominationImages"/>
                     </div>
                 </div>
             </div>

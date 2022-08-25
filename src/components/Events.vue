@@ -62,7 +62,7 @@ export default {
         // }
         async fetchData() {
             let that = this;
-            let res = await axios.get('http://api.mediastack.com/v1/news?access_key=ad9b3abd2ea6d8b7eca54397d22883d3&keywords=churchs&countries=ng')
+            let res = await axios.get('http://api.mediastack.com/v1/news?access_key=ad9b3abd2ea6d8b7eca54397d22883d3&keywords=churches&languages=en')
                 .then(function (res) {
                     return res
              })
@@ -77,11 +77,11 @@ export default {
       computed: {
           filteredItems() {
              return this.articles.filter((article) => {
-                  return article.description.length  > 100
+                  return article.description.length  > 200
              })
           }
     },
-    mounted() {
+    created() {
         // this.getNews();
         this.fetchData()
         // console.log('created')
